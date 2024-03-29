@@ -1,0 +1,40 @@
+/* ---------------------main-section---------------- */
+
+.main-section {
+    padding: 200px 0 100px 0;
+
+    .content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .wive {
+        position: absolute;
+        top: -230px;
+        left: -170px;
+        z-index: -1;
+    }
+
+    .text-box {
+        max-width: 800px;
+    }
+
+    .main-title {
+        margin-bottom: 40px;
+        font: $medium 96px/1.1 $Montserrat;
+    }
+
+    .text {
+        padding: 20px;
+        margin-bottom: 60px;
+        margin-left: -20px;
+        background-color: rgba($green, .3);
+        font: $regular 24px/1.2 $Montserrat;
+    }
+
+    .btn-wrap {
+        text-align: center;
+    }
+}

@@ -1,0 +1,25 @@
+body {
+    background: rgb(24,113,49);
+	background: linear-gradient(90deg, rgba(24,113,49,1) 40%, rgba(72,29,141,1) 60%);
+}
+
+#wrapper{
+	overflow: hidden;
+}
+
+.container {
+    width: 100%;
+	max-width: 1660px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.btn {
+	display: inline-block;
+	min-width: 470px;
+	padding: 25px;
+	background-color: #A5D6A3;
+	border-radius: 150px;
+	text-align: center;
+	font: $heavy 64px/1.2 $Montserrat;
+}

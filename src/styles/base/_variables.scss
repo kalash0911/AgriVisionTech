@@ -3,14 +3,10 @@
 // Color names - http://name-of-color.com/
 
 $black: #000;
-$black21: #212121;
-$black27: #2A2827;
-$black4A: #554F4A;
 $white: #fff;
-$whiteEA: #FAF5EA;
-$gray: #ccc;
-$yellowD0: #F6E9D0;
-$orange: #CF7C58;
+$gray:  #ccc;
+$green: #0F5F38;
+
 
 
 $base-font-sans-serif: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
@@ -22,8 +18,8 @@ $Lora: 'Lora', $base-font-sans-serif;
 $rem-base: 16px;
 
 // Body
-$base-text-color: $black27 !default;
-$base-background-color: $whiteEA !default;
+$base-text-color: $white !default;
+$base-background-color: $white !default;
 $font-size-base: 16px !default;
 $line-height-base: 1.2 !default;
 $base-font-family: $base-font-sans-serif !default;
@@ -60,5 +56,18 @@ $h6-font-size: 15px;
 $headings-font-family: $base-font-sans-serif;
 $headings-color: inherit !default;
 
+$anim_03: all .3s ease 0s;
+$anim_05: all .5s ease 0s;
+$anim_07: all .7s ease 0s;
+$anim_1:  all 1s ease 0s;
+$anim_2:  all 2s ease 0s;
 
-$animation-speed: all .3s ease 0s;
+$thin:        100;
+$extra-light: 200;
+$light:       300;
+$regular:     400;
+$medium:      500;
+$semi-bold:   600;
+$bold:        700;
+$extra-bold:  800;
+$heavy:       900;
