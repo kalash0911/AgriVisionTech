@@ -1,6 +1,10 @@
 body {
     background: rgb(24,113,49);
 	background: linear-gradient(90deg, rgba(24,113,49,1) 40%, rgba(72,29,141,1) 60%);
+
+	&.body_lock {
+		overflow: hidden;
+	}
 }
 
 #wrapper{
@@ -14,12 +18,47 @@ body {
 	margin: 0 auto;
 }
 
+.overflow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: $anim_03;
+
+	.active & {
+		z-index: 0;
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
 .btn {
 	display: inline-block;
-	min-width: 470px;
-	padding: 25px;
+	padding: 13px 25px;
 	background-color: #A5D6A3;
-	border-radius: 150px;
+	border-radius: 25px;
 	text-align: center;
-	font: $heavy 64px/1.2 $Montserrat;
+	font: $bold 32px/1.2 $Montserrat;
+	border: 2px solid transparent;
+	transition: $anim_03;
+
+	&:hover {
+		background-color: transparent;
+		color: $white;
+		border-color: $white;
+	}
+
+	&.max {
+		min-width: 470px;
+		padding: 25px;
+		border-radius: 150px;
+		font-size: 64px;
+		font-weight: $heavy;
+	}
 }
