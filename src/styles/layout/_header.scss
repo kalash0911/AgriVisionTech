@@ -31,12 +31,24 @@
                 order: -1;
                 margin-top: auto;
             }
+
+            img {
+                width: 110px;
+            }
         }
 
         img {
 
             @include media('<laptop_max') {
                 width: 125px;
+            }
+
+            @include media('<tablet') {
+                width: 115px;
+            }
+
+            @include media('<phone') {
+                width: 85px;
             }
         }
     }
@@ -52,13 +64,25 @@
             top: 0;
             left: -50%;
             height: 100vh;
+            min-height: 100vh;
             width: 50%;
             flex-direction: column-reverse;
             justify-content: flex-end;
-            padding: 80px 40px 40px 40px;
+            padding: 100px 40px 40px 40px;
             background-color: #558353;
             z-index: 1;
             transition: $anim_05;
+            overflow: auto;
+        }
+
+        @include media('<tablet') {
+            left: -70%;
+            width: 70%;
+        }
+
+        @include media('<phone') {
+            left: -100%;
+            width: 100%;
         }
 
         .active & {
@@ -109,6 +133,14 @@
         }
     }
 
+    .search-box {
+        z-index: 2;
+
+        @include media('<widescreen') {
+            position: relative;
+        }
+    }
+
     .search {
         background: none;
         border: none;
@@ -116,6 +148,10 @@
         stroke-width: 3;
         transition: $anim_03;
         padding: 0;
+
+        @include media('<widescreen') {
+            display: none;
+        }
 
         &:hover {
             stroke-width: 5;
@@ -130,10 +166,58 @@
         }
     }
 
+    .search-file {
+        position: absolute;
+        top: -100%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 100%;
+        max-width: 700px;
+        transition: $anim_03;
+
+        @include media('<laptop_max') {
+            max-width: 500px;
+        }
+
+        @include media('<widescreen') {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+        }
+
+        &.active {
+            top: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: none;
+            font: $regular 24px/1.2 $Montserrat;
+            color: $black;
+
+            @include media('<laptop_max') {
+                font-size: 20px;
+                padding: 5px 25px;
+            }
+
+            @include media('<widescreen') {
+                padding: 5px 50px 5px 15px;
+            }
+        }
+    }
+
     .btn {
 
         @include media('<laptop_max') {
             font-size: 20px;
+        }
+
+        @include media('<tablet') {
+            font-size: 14px;
+            padding: 7px 10px;
         }
     }
 }
@@ -151,6 +235,11 @@
 
     @include media('<widescreen'){
         display: block;
+        margin-right: 130px;
+    }
+
+    @include media('<tablet') {
+        margin-right: 50px;
     }
 
     span{

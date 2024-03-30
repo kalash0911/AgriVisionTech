@@ -19,3 +19,19 @@ for (let i = 0; i < linkClose.length; ++i) {
     document.body.classList.remove('active');
     });
 }
+
+const searchBtn = document.querySelector('.search-btn');
+const searchFile = document.querySelector('.search-file');
+const overflowBlur = document.querySelector('.overflow-blur');
+
+searchBtn?.addEventListener('click', function () {
+    searchFile.classList.add('active');
+    overflowBlur.classList.add('active');
+    document.body.classList.add('body_lock');
+});
+
+overflowBlur?.addEventListener('click', function () {
+    searchFile.classList.remove('active');
+    overflowBlur.classList.remove('active');
+    document.body.classList.remove('body_lock');
+});

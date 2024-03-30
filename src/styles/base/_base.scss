@@ -8,6 +8,7 @@ body {
 }
 
 #wrapper{
+	position: relative;
 	overflow: hidden;
 }
 
@@ -38,6 +39,26 @@ body {
 	}
 }
 
+.overflow-blur {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: $anim_03;
+
+	&.active {
+		z-index: 1;
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
 .btn {
 	display: inline-block;
 	padding: 13px 25px;
@@ -60,5 +81,15 @@ body {
 		border-radius: 150px;
 		font-size: 64px;
 		font-weight: $heavy;
+
+		@include media('<laptop_max') {
+            font-size: 44px;
+			min-width: 0;
+			padding: 10px 25px;
+        }
+
+		@include media('<phone') {
+            font-size: 24px;
+        }
 	}
 }

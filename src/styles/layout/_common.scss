@@ -2,6 +2,11 @@
 
 .main-section {
     padding: 200px 0 100px 0;
+    min-height: 100vh;
+
+    @include media('<tablet') {
+        padding: 130px 0 100px 0;
+    }
 
     .lines {
         position: absolute;
@@ -9,6 +14,13 @@
         left: 40%;
         transform: translate(-50%);
         z-index: -1;
+
+        @include media('<tablet') {
+            left: auto;
+            right: -30%;
+            top: 100px;
+            transform: none;
+        }
     }
 
     .content {
@@ -27,11 +39,31 @@
 
     .text-box {
         max-width: 800px;
+
+        @include media('<laptop_max') {
+            max-width: 510px;
+        }
+
+        @include media('<tablet') {
+            max-width: 100%;
+        }
     }
 
     .main-title {
         margin-bottom: 40px;
         font: $medium 96px/1.1 $Montserrat;
+
+        @include media('<laptop_max') {
+            font-size: 70px;
+        }
+
+        @include media('<desktop') {
+            font-size: 48px;
+        }
+
+        @include media('<phone') {
+            font-size: 40px;
+        }
     }
 
     .text {
@@ -39,7 +71,21 @@
         margin-bottom: 60px;
         margin-left: -20px;
         background-color: rgba($green, .3);
-        font: $regular 24px/1.2 $Montserrat;
+        font: $regular 24px/1.3 $Montserrat;
+
+        @include media('<laptop_max') {
+            font-size: 16px;
+        }
+
+        @include media('<tablet') {
+            margin-left: 0;
+        }
+
+        @include media('<phone') {
+            font-size: 14px;
+            margin-bottom: 30px;
+            background-color: rgba($green, .6);
+        }
     }
 
     .btn-wrap {
@@ -48,6 +94,16 @@
 
     .img-box {
         position: relative;
+        min-width: 400px;
+
+        @include media('<tablet') {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 180px;
+            min-width: 180px;
+            z-index: -1;
+        }
 
         &::before {
             content:'';
@@ -63,6 +119,11 @@
             opacity: .2;
             z-index: 1;
             filter: blur(100px);
+
+            @include media('<phone') {
+                opacity: 1;
+                background: $black;
+            }
         }
     }
 }
