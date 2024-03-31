@@ -1,4 +1,4 @@
-
+/* header */
 const burger = document.querySelector('.burger');
 const linkClose = document.querySelectorAll('.link-close');
 const overflow = document.querySelector('.overflow');
@@ -20,6 +20,8 @@ for (let i = 0; i < linkClose.length; ++i) {
     });
 }
 
+/* search */
+
 const searchBtn = document.querySelector('.search-btn');
 const searchFile = document.querySelector('.search-file');
 const overflowBlur = document.querySelector('.overflow-blur');
@@ -34,4 +36,44 @@ overflowBlur?.addEventListener('click', function () {
     searchFile.classList.remove('active');
     overflowBlur.classList.remove('active');
     document.body.classList.remove('body_lock');
+});
+
+// Swiper:
+
+function destroySlidersOnResize(selector, width, obj, moreThan) {
+    const init = {
+      ...obj,
+    };
+  
+    const win = window;
+    const sliderSelector = document.querySelector(selector);
+    let swiper = new Swiper(selector, init);
+  
+    const toggleInit = () => {
+      const neededWidth = moreThan
+        ? win.innerWidth >= width
+        : win.innerWidth <= width;
+      if (neededWidth) {
+        if (!sliderSelector?.classList.contains("swiper-initialized")) {
+          swiper = new Swiper(selector, init);
+        }
+      } else if (sliderSelector.classList.contains("swiper-initialized")) {
+        swiper.destroy();
+      }
+    };
+  
+    ["load", "resize"].forEach((evt) =>
+      win.addEventListener(evt, toggleInit, false)
+    );
+}
+
+destroySlidersOnResize(".missionSlider", 99999, {
+    spaceBetween: 20,
+    autoHeight: true,
+
+    pagination: {
+        el: '.pag',
+        clickable: true,
+    },
+
 });
