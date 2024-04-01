@@ -26,6 +26,7 @@
         position: relative;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 30px;
     }
 
@@ -37,13 +38,15 @@
     }
 
     .text-box {
+        width: 50%;
         max-width: 800px;
 
-        @include media('<laptop_max') {
-            max-width: 510px;
+        @include media('<desktop') {
+            width: 55%;
         }
 
         @include media('<tablet') {
+            width: 100%;
             max-width: 100%;
         }
     }
@@ -97,7 +100,8 @@
 
     .img-box {
         position: relative;
-        min-width: 400px;
+        width: 45%;
+        min-width: 200px;
 
         @include media('<tablet') {
             position: absolute;
