@@ -1,4 +1,5 @@
 /* header */
+
 const burger = document.querySelector('.burger');
 const linkClose = document.querySelectorAll('.link-close');
 const overflow = document.querySelector('.overflow');
