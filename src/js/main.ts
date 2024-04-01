@@ -81,3 +81,12 @@ destroySlidersOnResize(".missionSlider", 99999, {
       clickable: true,
   },
 });
+
+// @ts-ignore
+destroySlidersOnResize(".challengesSlider", 1199, {
+  spaceBetween: 20,
+  slidesPerView: 3.8,
+  slidesPerGroup: 1,
+  initialSlide: 2,
+  centeredSlides: true,
+});

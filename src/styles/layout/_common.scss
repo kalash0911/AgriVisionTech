@@ -275,3 +275,176 @@
         }
     }
 }
+
+/* -------------------challenges-section------------- */
+
+.challenges-section {
+    padding: 50px 0;
+
+    .title {
+        margin-bottom: 45px;
+    }
+
+    .block {
+        
+        padding: 35px 140px;
+        background-color: $white;
+        border-radius: 177px;
+
+        @include media('<laptop_max') {
+            padding: 35px 70px;
+            border-radius: 100px;
+        }
+
+        @include media('<widescreen') {
+            padding: 35px 0;
+            border-radius: 0;
+            margin: 0 -20px;
+        }
+    }
+
+    .challengesSlider {
+
+        @include media('>=widescreen') {
+            overflow: visible;
+        }
+    }
+
+    .swiper-wrapper {
+
+        @include media('>=widescreen') {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            row-gap: 30px;
+        }
+    }
+
+    .swiper-slide {
+        transition: $anim_03;
+
+        @include media('>=widescreen') {
+            width: 32%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            flex: 1 0 auto;
+        }
+
+        @include media('<widescreen') {
+            opacity: .5;
+        }
+
+        &.swiper-slide-active {
+
+            @include media('<widescreen') {
+                opacity: 1;
+            }
+        }
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+    }
+
+    .icon {
+        margin-bottom: 20px;
+        text-align: center;
+
+        @include media('<widescreen') {
+            width: 50%;
+            margin: 0 auto 20px auto;
+        }
+    }
+
+    .text-box {
+        position: relative;
+        display: grid;
+        place-items: center;
+        flex: 1 0 auto;
+    }
+
+    .item-title {
+        max-width: 80%;
+        margin: 0;
+        text-align: center;
+        font: $bold 40px/1.2 $Montserrat;
+        color: $black;
+        text-transform: uppercase;
+
+        @include media('<laptop_max') {
+            font-size: 25px;
+            max-width: 65%;
+        }
+    }
+
+    .tooltip {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -20px;
+        width: 60px;
+        min-width: 60px;
+        height: 60px;
+        background-color: $black;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font: $semi-bold 35px/1.2 $Montserrat;
+        color: $white;
+        cursor: pointer;
+        transition: $anim_03;
+
+        @include media('<laptop_max') {
+            right: 0;
+            width: 40px;
+            min-width: 40px;
+            height: 40px;
+            font-size: 25px;
+        }
+
+        
+        @include media('<widescreen') {
+            width: 30px;
+            min-width: 30px;
+            height: 30px;
+            font-size: 20px;
+        }
+
+        &:hover {
+            background-color: $green38;
+
+            .tooltip-text  {
+                opacity: 1;
+                z-index: 1;
+                pointer-events: visible;
+            }
+        }
+    }
+
+    .tooltip-text {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: $grayD9;
+        width: 300px;
+        padding: 15px;
+        border-radius: 20px;
+        text-align: center;
+        font: $regular 16px/1.2 $Montserrat;
+        color: $black;
+        transition: $anim_03;
+        opacity: 0;
+        z-index: -1;
+        pointer-events: none;
+
+        @include media('<laptop_max') {
+            left: 0;
+            width: 200px;
+            font-size: 14px;
+        }
+    }
+}
