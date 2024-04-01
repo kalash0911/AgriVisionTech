@@ -4,20 +4,20 @@ const linkClose = document.querySelectorAll('.link-close');
 const overflow = document.querySelector('.overflow');
 
 burger?.addEventListener('click', function () {
-    document.body.classList.toggle('body_lock');
-    document.body.classList.toggle('active');
+  document.body.classList.toggle('body_lock');
+  document.body.classList.toggle('active');
 });
 
 overflow?.addEventListener('click', function () {
-    document.body.classList.toggle('body_lock');
-    document.body.classList.toggle('active');
+  document.body.classList.toggle('body_lock');
+  document.body.classList.toggle('active');
 });
 
 for (let i = 0; i < linkClose.length; ++i) {
-    linkClose[i].addEventListener('click', function () {
-    document.body.classList.remove('body_lock');
-    document.body.classList.remove('active');
-    });
+  linkClose[i].addEventListener('click', function () {
+  document.body.classList.remove('body_lock');
+  document.body.classList.remove('active');
+  });
 }
 
 /* search */
@@ -27,53 +27,56 @@ const searchFile = document.querySelector('.search-file');
 const overflowBlur = document.querySelector('.overflow-blur');
 
 searchBtn?.addEventListener('click', function () {
-    searchFile.classList.add('active');
-    overflowBlur.classList.add('active');
-    document.body.classList.add('body_lock');
+  searchFile?.classList.add('active');
+  overflowBlur?.classList.add('active');
+  document.body.classList.add('body_lock');
 });
 
 overflowBlur?.addEventListener('click', function () {
-    searchFile.classList.remove('active');
-    overflowBlur.classList.remove('active');
-    document.body.classList.remove('body_lock');
+  searchFile?.classList.remove('active');
+  overflowBlur.classList.remove('active');
+  document.body.classList.remove('body_lock');
 });
 
-// Swiper:
+/* Swiper: */
 
 function destroySlidersOnResize(selector, width, obj, moreThan) {
-    const init = {
-      ...obj,
-    };
-  
-    const win = window;
-    const sliderSelector = document.querySelector(selector);
-    let swiper = new Swiper(selector, init);
-  
-    const toggleInit = () => {
-      const neededWidth = moreThan
-        ? win.innerWidth >= width
-        : win.innerWidth <= width;
-      if (neededWidth) {
-        if (!sliderSelector?.classList.contains("swiper-initialized")) {
-          swiper = new Swiper(selector, init);
-        }
-      } else if (sliderSelector.classList.contains("swiper-initialized")) {
-        swiper.destroy();
+  const init = {
+    ...obj,
+  };
+
+  const win = window;
+  const sliderSelector = document.querySelector(selector);
+  // @ts-ignore
+  let swiper = new Swiper(selector, init);
+
+  const toggleInit = () => {
+    const neededWidth = moreThan
+      ? win.innerWidth >= width
+      : win.innerWidth <= width;
+    if (neededWidth) {
+      if (!sliderSelector?.classList.contains("swiper-initialized")) {
+        // @ts-ignore
+        swiper = new Swiper(selector, init);
       }
-    };
-  
-    ["load", "resize"].forEach((evt) =>
-      win.addEventListener(evt, toggleInit, false)
-    );
+    } else if (sliderSelector.classList.contains("swiper-initialized")) {
+      swiper.destroy();
+    }
+  };
+
+  ["load", "resize"].forEach((evt) =>
+    win.addEventListener(evt, toggleInit, false)
+  );
+
 }
 
+// @ts-ignore
 destroySlidersOnResize(".missionSlider", 99999, {
-    spaceBetween: 20,
-    autoHeight: true,
+  spaceBetween: 20,
+  autoHeight: true,
 
-    pagination: {
-        el: '.pag',
-        clickable: true,
-    },
-
+  pagination: {
+      el: '.pag',
+      clickable: true,
+  },
 });
