@@ -99,5 +99,15 @@ body {
 }
 
 .title {
+	margin-bottom: 45px;
 	font: $medium 60px/1.2 $Montserrat;
+
+	@include media('<laptop_max') {
+		font-size: 45px;
+	}
+
+	@include media('<phone') {
+		margin-bottom: 25px;
+		font-size: 20px;
+	}
 }

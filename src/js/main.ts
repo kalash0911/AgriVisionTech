@@ -89,4 +89,20 @@ destroySlidersOnResize(".challengesSlider", 1199, {
   slidesPerGroup: 1,
   initialSlide: 2,
   centeredSlides: true,
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1.9,
+      initialSlide: 1,
+    },
+    680: {
+      slidesPerView: 2.2,
+      initialSlide: 1,
+    },
+    900: {
+      slidesPerView: 3.8,
+      initialSlide: 2,
+    },
+  },
+
 });
