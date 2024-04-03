@@ -21,6 +21,14 @@ body {
 	max-width: 1660px;
 	padding: 0 20px;
 	margin: 0 auto;
+
+	@include media('<laptop_max') {
+		max-width: 1300px;
+	}
+
+	@include media('<widescreen') {
+		max-width: 900px;
+	}
 }
 
 .overflow {
