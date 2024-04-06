@@ -273,11 +273,6 @@
 
 .challenges-section {
     position: relative;
-    padding: 50px 0;
-
-    @include media('<phone') {
-        padding: 25px 0;
-    }
 
     .dashed-lines {
         position: absolute;
@@ -507,10 +502,14 @@
 /* ----------------------team-section---------------- */
 
 .team-section {
-    padding: 50px 0;
+    position: relative;
 
-    @include media('<phone') {
-        padding: 25px 0;
+    .lines {
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        transform: translate(-50%);
+        z-index: -1;
     }
 
     .number-block {
@@ -651,6 +650,207 @@
 
         @include media('<phone') {
             font-size: 14px;
+        }
+    }
+}
+
+/* -----------------------meet-section--------------- */
+
+.meet-section {
+
+    .meet-slider {
+        position: relative;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .meetSlider  {
+
+        @include media('<phone') {
+            overflow: visible;
+        }
+    }
+
+    .img-wrap {
+        position: relative;
+        min-height: 300px;
+        border-radius: 40px;
+        overflow: hidden;
+
+        @include media('<tablet') {
+            min-height: 200px;
+            border-radius: 60px;
+        }
+
+        @include media('<phone') {
+            min-height: 200px;
+            border-radius: 40px
+        }
+
+        img {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .name-wrap {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba($white, .4);
+    }
+
+    .name {
+        text-align: center;
+        font: $extra-bold 20px/1.2 $Montserrat;
+        color: $black;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 20px;
+
+        @include media('<tablet') {
+            font-size: 16px;
+            padding: 15px;
+        }
+
+        @include media('<phone') {
+            font-size: 14px;
+            padding: 10px 15px;
+        }
+    }
+
+    .text-wrap {
+        max-width: 90%;
+        margin: -20px auto 0 auto;
+        border-radius: 18px;
+        padding: 25px 5px 5px 5px;
+        background: rgb(15,33,95);
+        background: linear-gradient(90deg, rgba(15,33,95,1) 0%, rgba(22,34,98,1) 40%, rgba(44,127,52,0.4) 100%);
+    }
+
+    .position {
+        margin-bottom: 5px;
+        text-align: center;
+        font: $semi-bold 14px/1.2 $Montserrat;
+        color: $white;
+        text-transform: uppercase;
+
+        @include media('<tablet') {
+            font-size: 12px;
+        }
+    }
+
+    .soc-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        @include media('<phone') {
+            gap: 10px;
+        }
+    }
+
+    .icon {
+
+        &:hover {
+            
+            img {
+                transform: scale(1.1);
+            }
+        }
+
+        img {
+            display: block;
+            transition: $anim_03;
+            margin: 0 auto;
+
+            @include media('<phone') {
+                width: 80%;
+            }
+        }
+    }
+
+    .arrow {
+        color: $white;
+        transition: $anim_03;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &::after {
+            @include media('<phone') {
+                font-size: 30px;
+            } 
+        }
+    }
+
+    .swiper-button-prev {
+        left: -50px;
+
+        @include media('<tablet') {
+            left: -40px;
+        }
+
+        @include media('<phone') {
+            left: -30px;
+        }
+    }
+
+    .swiper-button-next {
+        right: -50px;
+
+        @include media('<tablet') {
+            right: -40px;
+        }
+
+        @include media('<phone') {
+            right: -30px;
+        }
+    }
+}
+
+/* ------------------------our-section---------------- */
+
+.our-section {
+
+    .marquee-block {
+        width: 200%;
+        display: flex;
+        gap: 90px;
+        animation: marquee-anim 5s linear infinite;
+    }
+
+    .marquee-box {
+        width: 100%;
+        display: flex;
+        gap: 90px;
+
+    }
+
+    .marquee-img {
+        display: flex;
+        justify-content: center;
+        gap: 90px;
+
+        img {
+            max-width: 275px;
+        }
+    }
+
+    @keyframes marquee-anim {
+        0%{
+            transform: translateX(0%);
+        }
+        100%{
+            transform: translateX(-50%);
         }
     }
 }

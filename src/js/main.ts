@@ -77,8 +77,8 @@ destroySlidersOnResize(".missionSlider", 99999, {
   autoHeight: true,
 
   pagination: {
-      el: '.pag',
-      clickable: true,
+    el: '.pag',
+    clickable: true,
   },
 });
 
@@ -105,4 +105,39 @@ destroySlidersOnResize(".challengesSlider", 1199, {
     },
   },
 
+});
+
+// @ts-ignore
+destroySlidersOnResize(".meetSlider", 99999, {
+  spaceBetween: 50,
+  slidesPerView: 5,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    0: {
+      spaceBetween: 40,
+      slidesPerView: 1.3,
+      centeredSlides: true,
+    },
+    480: {
+      spaceBetween: 20,
+      slidesPerView: 2,
+    },
+    680: {
+      spaceBetween: 20,
+      slidesPerView: 3,
+    },
+    1200: {
+      spaceBetween: 50,
+      slidesPerView: 4,
+    },
+    1600: {
+      spaceBetween: 50,
+      slidesPerView: 5,
+    },
+  },
 });
