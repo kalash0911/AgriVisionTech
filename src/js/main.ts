@@ -141,3 +141,152 @@ destroySlidersOnResize(".meetSlider", 99999, {
     },
   },
 });
+
+// @ts-ignore
+destroySlidersOnResize(".marqueeSlider", 99999, {
+  slidesPerView: 6.6,
+  spaceBetween: 60,
+  loop: true,
+  centeredSlides: true,
+  speed: 20000,
+
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 3.6,
+      spaceBetween: 20,
+    },
+    680: {
+      slidesPerView: 6.6,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 6.6,
+      spaceBetween: 60,
+    },
+  },
+});
+
+// @ts-ignore
+destroySlidersOnResize(".marqueeSmSlider", 99999, {
+  slidesPerView: 7.6,
+  spaceBetween: 40,
+  loop: true,
+  centeredSlides: true,
+  speed: 7000,
+
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 4.6,
+      spaceBetween: 20,
+    },
+    680: {
+      slidesPerView: 5.6,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 7.6,
+      spaceBetween: 40,
+    },
+  },
+});
+
+// @ts-ignore
+destroySlidersOnResize(".marqueeSmRevSlider", 99999, {
+  slidesPerView: 7.6,
+  spaceBetween: 40,
+  loop: true,
+  speed: 7000,
+  centeredSlides: true,
+  
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+    reverseDirection: true,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 4.6,
+      spaceBetween: 20,
+    },
+    680: {
+      slidesPerView: 5.6,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 7.6,
+      spaceBetween: 40,
+    },
+  },
+});
+
+// @ts-ignore
+destroySlidersOnResize(".marqueeSmSpSlider", 99999, {
+  slidesPerView: 7.6,
+  spaceBetween: 40,
+  loop: true,
+  speed: 4000,
+  centeredSlides: true,
+  
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 4.6,
+      spaceBetween: 20,
+    },
+    680: {
+      slidesPerView: 5.6,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 7.6,
+      spaceBetween: 40,
+    },
+  },
+});
+
+// @ts-ignore
+destroySlidersOnResize(".revSlider", 99999, {
+  spaceBetween: 40,
+  slidesPerView: 3,
+  autoHeight: true,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  pagination: {
+    el: '.pag',
+    clickable: true,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    769: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1600: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+  },
+});

@@ -127,3 +127,49 @@ body {
         padding: 25px 0;
     }
 }
+
+.arrow {
+	color: $white;
+	transition: $anim_03;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+
+	&::after {
+		@include media('<phone') {
+			font-size: 30px;
+		} 
+	}
+}
+
+.pag {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 25px;
+
+	@include media('<widescreen') {
+		gap: 15px;
+	}
+
+	.swiper-pagination-bullet {
+		width: 30px;
+		height: 30px;
+		border: 1px solid $white;
+		background: transparent;
+		opacity: 1;
+		margin: 0;
+		transition: $anim_03;
+
+		@include media('<widescreen') {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	.swiper-pagination-bullet-active {
+		background-color: $white;
+	}
+}
