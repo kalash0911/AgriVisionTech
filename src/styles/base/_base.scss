@@ -154,6 +154,10 @@ body {
 		gap: 15px;
 	}
 
+	@include media('<phone') {
+		gap: 0;
+	}
+
 	.swiper-pagination-bullet {
 		width: 30px;
 		height: 30px;
@@ -167,6 +171,11 @@ body {
 			width: 20px;
 			height: 20px;
 		}
+
+		@include media('<phone') {
+            width: 10px;
+			height: 10px;
+        }
 	}
 
 	.swiper-pagination-bullet-active {

@@ -1051,3 +1051,180 @@
         }
     }
 }
+
+/* ------------------------table-section-------------- */
+
+.table-section {
+
+    .table {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        @include media('<widescreen') {
+            gap: 30px;
+        }
+
+        @include media('<phone') {
+            margin: 0 -20px;
+            gap: 15px;
+        }
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        background: rgb(15,95,56);
+        background: linear-gradient(90deg, rgba(15,95,56,0.39959733893557425) 0%, rgba(16,40,55,1) 100%);
+
+        @include media('<tablet') {
+            flex-wrap: wrap;
+        }
+
+        &.first {
+            padding: 0;
+            background: none;
+
+            .big {
+
+                @include media('<tablet') {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .col {
+        width: 25%;
+
+        @include media('<tablet') {
+            width: 33%;
+        }
+
+        &.big {
+
+            @include media('<tablet') {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 25px;
+            }
+
+            @include media('<phone') {
+                margin-bottom: 15px;
+            }
+        }
+
+        &.name {
+            
+            .text {
+                max-width: max-content;
+                background-color: rgba($green38, .6);
+                margin: 0 auto;
+                border-radius: 50px;
+                padding: 13px 35px;
+
+                @include media('<widescreen') {
+                    padding: 13px 15px;
+                }
+
+                @include media('<phone_max') {
+                    padding: 10px;
+                }
+            }
+        }
+    }
+
+    .text {
+        padding: 0 10px;
+        text-align: center;
+        font: $regular 36px/1.2 $Montserrat;
+        color: $white;
+        margin: 0;
+
+        @include media('<laptop_max') {
+            font-size: 28px;
+        }
+
+        @include media('<widescreen') {
+            font-size: 18px;
+        }
+
+        @include media('<phone_max') {
+            font-size: 14px;
+        }
+    }
+
+    .col-title {
+        font: $regular 45px/1.2 $Montserrat;
+        color: $white;
+        margin: 0;
+
+        @include media('<laptop_max') {
+            font-size: 36px;
+        }
+
+        @include media('<widescreen') {
+            font-size: 20px;
+        }
+
+        @include media('<phone_max') {
+            font-size: 16px;
+        }
+    }
+}
+
+/* -------------------------blog-section-------------- */
+
+.blog-section {
+
+    .blog-slider {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    .blogSlider {
+        overflow: visible;
+    }
+
+    .card {
+        background-color: $grayD9;
+        border-radius:  80px;
+    }
+
+    .img-box {
+        position: relative;
+        width: 100%;
+        min-height: 320px;
+        border-radius: 100px;
+        overflow: hidden;
+        transform: scale(1.05) translateY(6px);
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .text-box {
+        padding: 30px 20px 20px 20px;
+    }
+
+    .text {
+        max-width: 80%;
+        margin: 0 auto 20px auto;
+        font: $medium 32px/1.2 $Montserrat;
+        color: $black;
+    }
+
+    .autor {
+        margin: 0;
+        text-align: center;
+        font: $medium 20px/1.2 $Montserrat;
+        color: $black;
+    }
+}

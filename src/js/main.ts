@@ -290,3 +290,11 @@ destroySlidersOnResize(".revSlider", 99999, {
     },
   },
 });
+
+// @ts-ignore
+destroySlidersOnResize(".blogSlider", 99999, {
+  spaceBetween: 90,
+  slidesPerView: 2.5,
+  initialSlide: 1,
+  centeredSlides: true,
+});
