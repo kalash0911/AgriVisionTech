@@ -1177,19 +1177,133 @@
 /* -------------------------blog-section-------------- */
 
 .blog-section {
+    position: relative;
+
+    .bg {
+        position: absolute;
+        top: 170px;
+        left: 50%;
+        transform: translate(-50%);
+        min-width: 700px;
+        z-index: -1;
+        opacity: .9;
+
+        @include media('<laptop_max') {
+            top: 140px;
+        }
+
+        @include media('<phone') {
+            top: 30px;
+        }
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .drop-img {
+        position: absolute;
+        top: -220px;
+        left: -30px;
+        z-index: -2;
+        opacity: .8;
+
+        @include media('<laptop_max') {
+            top: -170px;
+            width: 400px;
+        }
+
+        @include media('<widescreen') {
+            width: 200px;
+            top: 0;
+            left: 30px;
+        }
+
+        @include media('<phone') {
+            width: 100px;
+            left: 0;
+        }
+    }
+
+    .title {
+        margin-bottom: 150px;
+
+        @include media('<widescreen') {
+            margin-bottom: 100px;
+        }
+
+        @include media('<phone') {
+            margin-bottom: 50px;
+        }
+    }
 
     .blog-slider {
-        max-width: 1920px;
+        max-width: 85%;
         margin: 0 auto;
+
+        @include media('<laptop_max') {
+            max-width: 95%;
+        }
+
+        @include media('<phone') {
+            max-width: 100%;
+        }
     }
 
     .blogSlider {
         overflow: visible;
     }
 
+    .swiper-slide {
+        opacity: .3;
+        height: auto;
+        transition: $anim_03;
+
+        &.swiper-slide-active,
+        &.swiper-slide-next {
+            opacity: 1;
+        }
+
+        &.swiper-slide-next {
+
+            @include media('<tablet') {
+                opacity: .3;
+            }
+        }
+    }
+
     .card {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         background-color: $grayD9;
         border-radius:  80px;
+        border-top-right-radius: 100px;
+        border-top-left-radius: 100px;
+
+        @include media('<phone') {
+            border-radius: 50px;
+        }
+
+        &:hover {
+
+            .img-box {
+
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
     }
 
     .img-box {
@@ -1200,6 +1314,16 @@
         overflow: hidden;
         transform: scale(1.05) translateY(6px);
 
+        @include media('<widescreen') {
+            min-height: 180px;
+            transform: scale(1.05) translateY(3px);
+        }
+
+        @include media('<phone') {
+            min-height: 150px;
+            border-radius: 50px;
+        }
+
         img {
             position: absolute;
             top: 0;
@@ -1207,18 +1331,41 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: $anim_03;
         }
     }
 
     .text-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1 0 auto;
         padding: 30px 20px 20px 20px;
+
+        @include media('<phone') {
+            padding: 20px 10px 10px 10px;
+        }
     }
 
     .text {
+        width: 100%;
         max-width: 80%;
         margin: 0 auto 20px auto;
         font: $medium 32px/1.2 $Montserrat;
         color: $black;
+
+        @include media('<laptop_max') {
+            font-size: 28px;
+        }
+
+        @include media('<widescreen') {
+            max-width: 100%;
+            font-size: 18px;
+        }
+
+        @include media('<phone') {
+            font-size: 16px;
+        }
     }
 
     .autor {
@@ -1226,5 +1373,13 @@
         text-align: center;
         font: $medium 20px/1.2 $Montserrat;
         color: $black;
+
+        @include media('<widescreen') {
+            font-size: 14px;
+        }
+
+        @include media('<phone') {
+            font-size: 12px;
+        }
     }
 }
