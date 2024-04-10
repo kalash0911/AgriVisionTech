@@ -106,6 +106,23 @@ body {
 	}
 }
 
+.sec-btn {
+	display: inline-block;
+	padding: 10px 40px;
+	background-color: $purple8D;
+	border-radius: 55px !important;
+	border: 1px solid transparent;
+	text-align: center;
+	font: $medium 32px/1.2 $Montserrat;
+	color: $white;
+	transition: $anim_03;
+
+	&:hover {
+		background-color: transparent;
+		border-color: $white;
+	}
+}
+
 .title {
 	margin-bottom: 45px;
 	font: $medium 60px/1.2 $Montserrat;
@@ -181,4 +198,25 @@ body {
 	.swiper-pagination-bullet-active {
 		background-color: $white;
 	}
+}
+
+*::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: $green38; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: $green38; 
 }

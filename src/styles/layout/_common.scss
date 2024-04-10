@@ -7,18 +7,34 @@
         padding: 130px 0 50px 0;
     }
 
+    .container {
+        position: relative;
+    }
+
     .lines {
         position: absolute;
-        top: 550px;
-        left: 40%;
-        transform: translate(-50%);
+        top: 50%;
+        right: 0;
         z-index: -1;
 
         @include media('<tablet') {
-            left: auto;
-            right: -30%;
-            top: 100px;
-            transform: none;
+            right: -70px;
+            top: 20%;
+        }
+
+        @include media('<phone') {
+            display: none;
+        }
+
+        &.mob {
+            display: none;
+            width: 100%;
+            right: 0;
+            top: 0;
+
+            @include media('<phone') {
+                display: block;
+            }
         }
     }
 
@@ -472,15 +488,6 @@
 /* ----------------------team-section---------------- */
 
 .team-section {
-    position: relative;
-
-    .lines {
-        position: absolute;
-        top: 40%;
-        left: 45%;
-        transform: translate(-50%);
-        z-index: -1;
-    }
 
     .number-block {
         position: relative;
@@ -1380,6 +1387,192 @@
 
         @include media('<phone') {
             font-size: 12px;
+        }
+    }
+}
+
+/* -----------------------contacts-section------------ */
+
+.contacts-section {
+
+    .title {
+        text-align: center;
+        font-size: 128px;
+    }
+
+    .block {
+        display: flex;
+    }
+
+    .form-wrap {
+        width: 100%;
+        max-width: 600px;
+        padding: 30px 30px 30px 70px;
+        background-color: rgba($white, .4);
+        border-top-left-radius: 120px;
+        border-bottom-left-radius: 120px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .input {
+        padding: 10px 30px;
+        border-radius: 90px;
+        font: $medium 36px/1.2 $Montserrat;
+        color: $black;
+        border: 1px solid transparent !important;
+
+        &::placeholder {
+            color: $black;
+        }
+
+        &.textarea {
+            height: 100px;
+
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+        }
+    }
+
+    .agree-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-left: 30px;
+    }
+
+    .text {
+        margin: 0;
+        font: $medium 14px/1.2 $Montserrat;
+        color: $black;
+    }
+
+    .checkbox {
+        width: 22px;
+        min-width: 22px;
+        height: 22px;
+        border: 1px solid $black;
+        padding: 3px;
+        cursor: pointer;
+
+        input {
+            display: none;
+        }
+
+        span {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: $green38;
+            opacity: 0;
+            transition: $anim_03;
+        }
+    }
+
+    .checkbox>input:checked+span {
+        opacity: 1;
+    }
+
+    .btn-wrap {
+        text-align: center;
+    }
+
+    .contacts-wrap {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 110px 0;
+
+        &::before,
+        &::after {
+            content:'';
+            position: absolute;
+            right: 0;
+            width: 80%;
+            height: 150px;
+            background-color: rgba($white, .4);
+            z-index: -1;
+        }
+
+        &::before {
+            top: 0;
+            border-top-right-radius: 120px;
+        }
+
+        &::after {
+            bottom: 0;
+            border-bottom-right-radius: 120px;
+        }
+
+        .line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20%;
+            height: 100%;
+            background-color: rgba($white, .4);
+            z-index: -1;
+        }
+    }
+
+    .avatar {
+        position: relative;
+        width: 250px;
+        min-width: 250px;
+        height: 280px;
+        border-radius: 30px;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .pos {
+        margin: 0;
+        padding: 60px 0;
+        font: $medium 40px/1.2 $Montserrat;
+        color: $white;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        padding: 60px 0;
+    }
+
+    .link {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin: 0;
+        font: $regular 36px/1.2 $Montserrat;
+        color: $white;
+
+        img {
+            width: 36px;
+            transition: $anim_03;
+        }
+
+        &:hover {
+
+            img {
+                transform: scale(1.1);
+            }
         }
     }
 }
