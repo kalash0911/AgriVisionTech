@@ -38,17 +38,22 @@
         }
 
         img {
+            width: 212px;
+            min-width: 212px;
 
             @include media('<laptop_max') {
                 width: 125px;
+                min-width: 125px;
             }
 
             @include media('<tablet') {
                 width: 115px;
+                min-width: 115px;
             }
 
             @include media('<phone') {
                 width: 85px;
+                min-width: 85px;
             }
         }
     }
@@ -92,6 +97,7 @@
 
     .menu {
         display: flex;
+        flex-wrap: wrap;
         column-gap: 35px;
         row-gap: 25px;
         list-style: none;
@@ -220,6 +226,7 @@
     }
 
     .btn {
+        white-space: nowrap;
 
         @include media('<laptop_max') {
             font-size: 20px;
