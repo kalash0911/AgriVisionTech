@@ -1755,10 +1755,14 @@
 /* ------------------------location-section----------- */
 
 .location-section {
-    margin: 50px 0;
+    margin: 50px 0 100px 0;
     padding: 40px 0;
     background: rgb(24,113,49);
     background: linear-gradient(90deg, rgba(24,113,49,1) 25%, rgba(15,95,56,1) 40%, rgba(72,29,142,1) 100%);
+
+    @include media('<phone') {
+        margin: 25px 0 50px 0;
+    }
 
     .content {
         display: flex;
