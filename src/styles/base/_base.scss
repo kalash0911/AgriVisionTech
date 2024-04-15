@@ -209,6 +209,8 @@ body {
 	top: 50%;
 	right: 0;
 	z-index: -1;
+	animation: animLines 3s .5s forwards;
+	opacity: 0;
 
 	@include media('<tablet') {
 		right: -70px;
@@ -229,6 +231,22 @@ body {
 			display: block;
 		}
 	}
+}
+
+@keyframes animLines {
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+.button-lock {
+	display: none;
 }
 
 *::-webkit-scrollbar {

@@ -78,12 +78,14 @@
 
     .btn-wrap {
         text-align: center;
+        transition-delay: .5s;
     }
 
     .img-box {
         position: relative;
         width: 45%;
         min-width: 200px;
+        transition-delay: .3s;
 
         @include media('<tablet') {
             position: absolute;
@@ -267,6 +269,22 @@
             border-radius: 0;
             margin: 0 -20px;
             background: none;
+            opacity: 0;
+            transition: $anim_speed;
+        }
+
+        &.show {
+
+            @include media('<widescreen') {
+                opacity: 1;
+            }
+
+            .swiper-slide {
+
+                @include media('>=widescreen') {
+                    opacity: 1;
+                }
+            }
         }
     }
 
@@ -316,6 +334,10 @@
             display: flex;
             flex-direction: column;
             flex: 1 0 auto;
+
+            opacity: 0;
+            transform: $anim_speed;
+            @include delay;
         }
 
         @include media('<widescreen') {
@@ -471,20 +493,24 @@
         padding: 30px 0;
         margin-bottom: 50px;
 
-        @include media('<tablet_sm') {
-            margin-bottom: 20px;
-        }
-
         &::before {
             content:'';
             position: absolute;
             top: 0;
             left: 50%;
-            transform: translate(-50%);
+            transform: translate(-150%);
             width: 100vw;
             height: 100%;
             z-index: -1;
-            background-color: rgba($black, .3)
+            background-color: rgba($black, .3);
+            transition: all 2s linear .3s;
+        }
+
+        &.show {
+
+            &::before {
+                transform: translate(-50%);
+            }
         }
     }
 
@@ -500,6 +526,7 @@
         }
 
         @include media('<phone') {
+            flex-direction: column;
             max-width: 45%;
             padding: 0;
         }
@@ -513,10 +540,6 @@
         @include media('<laptop_max') {
             font-size: 32px;
         }
-
-        @include media('<phone') {
-            font-size: 20px;
-        }
     }
 
     .number-text {
@@ -529,7 +552,8 @@
         }
 
         @include media('<phone') {
-            font-size: 12px;
+            text-align: center;
+            font-size: 16px;
         }
     }
 
@@ -543,6 +567,13 @@
         @include media('<tablet_sm') {
             row-gap: 20px;
         }
+
+        &.show {
+
+            .item {
+                opacity: 1;
+            }
+        }
     }
 
     .item {
@@ -550,6 +581,10 @@
         display: flex;
         align-items: center;
         gap: 10px;
+
+        opacity: 0;
+        transition: $anim_speed;
+        @include delay;
         
         @include media('<desktop') {
             width: 45%;
@@ -557,6 +592,10 @@
 
         @include media('<tablet_sm') {
             width: 85%;
+        }
+
+        @include media('<phone') {
+            width: 100%;
         }
     }
 
@@ -599,7 +638,7 @@
         }
 
         @include media('<phone') {
-            font-size: 14px;
+            font-size: 16px;
         }
     }
 }
@@ -612,6 +651,14 @@
         position: relative;
         max-width: 90%;
         margin: 0 auto;
+
+        &.show {
+
+            .swiper-slide {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
     }
 
     .meetSlider  {
@@ -619,6 +666,13 @@
         @include media('<phone') {
             overflow: visible;
         }
+    }
+
+    .swiper-slide {
+        transform: translateY(-150px);
+        opacity: 0;
+        transition: $anim_speed;
+        @include delay;
     }
 
     .img-wrap {
@@ -832,7 +886,7 @@
         }
 
         @include media('<phone') {
-            font-size: 20px;
+            font-size: 28px;
         }
     }
 
@@ -846,7 +900,7 @@
         }
 
         @include media('<phone') {
-            font-size: 16px;
+            font-size: 18px;
         }
     }
 }
@@ -1029,6 +1083,22 @@
         @include media('<widescreen') {
             right: -15px;
         }
+    }
+
+    .pag {
+
+        &.show {
+
+            .swiper-pagination-bullet {
+                opacity: 1;
+            }
+        }
+    }
+
+    .swiper-pagination-bullet {
+        opacity: 0;
+        transition: $anim_speed;
+        @include delay;
     }
 }
 

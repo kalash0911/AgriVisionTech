@@ -115,6 +115,7 @@ destroySlidersOnResize(".meetSlider", 99999, {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+    lockClass: "button-lock",
   },
 
   breakpoints: {
@@ -268,6 +269,7 @@ destroySlidersOnResize(".revSlider", 99999, {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+    lockClass: "button-lock",
   },
 
   pagination: {
@@ -319,3 +321,64 @@ destroySlidersOnResize(".blogSlider", 99999, {
   },
 
 });
+
+// Scroll anim
+
+document.addEventListener('DOMContentLoaded', () => {
+  initAnimationOnScroll();
+});
+
+export const initAnimationOnScroll = () => {
+const onEntry: IntersectionObserverCallback = (entry) => {
+  entry.forEach((change) => {
+    if (change.isIntersecting) {
+      change.target.classList.add('show');
+    }
+  });
+};
+
+const options = { threshold: [0.5] };
+const observer = new IntersectionObserver(onEntry, options);
+const elements = document.querySelectorAll('.anim');
+for (const elm of elements) {
+  observer.observe(elm);
+}
+};
+
+// For counter animate
+
+// проверяем наличие элементов с классом "count-progress" на странице
+if (document.querySelectorAll('.count-progress').length) {
+  // создаем экземпляр Intersection Observer
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      // если элемент стал видимым и его анимация еще не проигрывалась, запускаем анимацию
+      if (entry.isIntersecting && entry.target.getAttribute('data-animated') === 'false') {
+        const element = entry.target;
+        // @ts-ignore
+        const count = parseInt(element.innerText);
+        let currentCount = 0;
+        const speed = parseInt(element.getAttribute('data-speed')) || 10; // считываем значение атрибута "data-speed" или устанавливаем значение по умолчанию
+        const step = parseInt(element.getAttribute('data-step')) || 1; // считываем значение атрибута "data-step" или устанавливаем значение по умолчанию
+        const interval = setInterval(() => {
+          if (currentCount < count) {
+            currentCount += step;
+            if (currentCount > count) {
+              currentCount = count;
+            }
+            // @ts-ignore
+            element.innerText = currentCount;
+          } else {
+            clearInterval(interval);
+            element.setAttribute('data-animated', 'true'); // устанавливаем атрибут "data-animated" в значение "true"
+          }
+        }, speed);
+      }
+    });
+  });
+
+  // добавляем каждый элемент с классом "count-progress" в Observer
+  document.querySelectorAll('.count-progress').forEach(element => {
+    observer.observe(element);
+  });
+}

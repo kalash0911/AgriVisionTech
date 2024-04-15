@@ -309,3 +309,11 @@ transition: $list;
 	  }
 	}
 }
+
+@mixin delay {
+	@for $i from 1 through 9999 {
+	  &:nth-child(#{$i}) {
+		transition-delay: #{$i * .3}s;
+	  }
+	}
+}
