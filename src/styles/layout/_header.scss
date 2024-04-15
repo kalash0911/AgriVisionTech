@@ -88,6 +88,7 @@
         @include media('<phone') {
             left: -100%;
             width: 100%;
+            padding: 100px 40px;
         }
 
         .active & {

@@ -204,6 +204,33 @@ body {
 	}
 }
 
+.lines {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	z-index: -1;
+
+	@include media('<tablet') {
+		right: -70px;
+		top: 20%;
+	}
+
+	@include media('<phone') {
+		display: none;
+	}
+
+	&.mob {
+		display: none;
+		width: 100%;
+		right: 0;
+		top: 0;
+
+		@include media('<phone') {
+			display: block;
+		}
+	}
+}
+
 *::-webkit-scrollbar {
   width: 20px;
 }
