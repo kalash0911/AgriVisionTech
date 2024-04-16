@@ -295,8 +295,8 @@ destroySlidersOnResize(".revSlider", 99999, {
 
 // @ts-ignore
 destroySlidersOnResize(".blogSlider", 99999, {
-  spaceBetween: 90,
-  slidesPerView: 2,
+  spaceBetween: 60,
+  slidesPerView: 3,
   initialSlide: 1,
 
   breakpoints: {
@@ -306,17 +306,17 @@ destroySlidersOnResize(".blogSlider", 99999, {
       centeredSlides: true,
     },
     480: {
-      spaceBetween: 60,
-      slidesPerView: 1.5,
+      spaceBetween: 30,
+      slidesPerView: 2.5,
       centeredSlides: true,
     },
     769: {
-      spaceBetween: 60,
-      slidesPerView: 2,
+      spaceBetween: 30,
+      slidesPerView: 3,
     },
     1200: {
-      spaceBetween: 90,
-      slidesPerView: 2,
+      spaceBetween: 60,
+      slidesPerView: 3,
     },
   },
 
