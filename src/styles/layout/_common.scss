@@ -7,6 +7,10 @@
         padding: 130px 0 50px 0;
     }
 
+    @include media('<phone') {
+        padding: 100px 0 50px 0;
+    }
+
     .container {
         position: relative;
     }
@@ -17,6 +21,10 @@
         align-items: center;
         justify-content: space-between;
         gap: 30px;
+
+        @include media('<tablet') {
+            flex-direction: column-reverse;
+        }
     }
 
     .text-box {
@@ -34,8 +42,10 @@
     }
 
     .main-title {
+        position: relative;
         margin-bottom: 40px;
         font: $medium 96px/1.1 $Montserrat;
+        z-index: 2;
 
         @include media('<laptop_max') {
             font-size: 70px;
@@ -45,8 +55,20 @@
             font-size: 48px;
         }
 
+        @include media('<tablet') {
+            display: none;
+        }
+
         @include media('<phone') {
             font-size: 40px;
+        }
+
+        &.mob {
+            display: none;
+
+            @include media('<tablet') {
+                display: block;
+            }
         }
     }
 
@@ -88,12 +110,8 @@
         transition-delay: .3s;
 
         @include media('<tablet') {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 180px;
-            min-width: 180px;
-            z-index: -1;
+            text-align: center;
+            width: 100%;
         }
 
         &::before {
@@ -112,7 +130,6 @@
             filter: blur(100px);
 
             @include media('<phone') {
-                opacity: 1;
                 background: $black;
             }
         }
@@ -163,7 +180,7 @@
     
     .icon {
         position: absolute;
-        bottom: 0;
+        top: 75%;
         right: 0;
         z-index: -1;
         transition: $anim_03;
@@ -226,6 +243,14 @@
             @include media('<phone') {
                 font-size: 14px;
             }
+        }
+    }
+
+    .pag {
+        margin-top: 40px;
+
+        @include media('<phone') {
+            margin-top: 20px;
         }
     }
 }
@@ -1487,6 +1512,12 @@
 
             &::-webkit-scrollbar {
                 width: 0;
+            }
+
+            &::placeholder {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
     }

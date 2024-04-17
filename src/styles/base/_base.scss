@@ -214,7 +214,7 @@ body {
 
 	@include media('<tablet') {
 		right: -70px;
-		top: 20%;
+		top: 40%;
 	}
 
 	@include media('<phone') {
@@ -261,11 +261,11 @@ body {
  
 /* Handle */
 *::-webkit-scrollbar-thumb {
-  background: $green38; 
+  background: $purpleBC; 
   border-radius: 10px;
 }
 
 /* Handle on hover */
 *::-webkit-scrollbar-thumb:hover {
-  background: $green38; 
+  background: $purpleBC; 
 }
