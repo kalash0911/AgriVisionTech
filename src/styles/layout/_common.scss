@@ -1876,7 +1876,7 @@
 /* --------------------------post-section------------- */
 
 .page-section {
-    padding: 200px 0 50px 0;
+    padding: 150px 0 50px 0;
 
     @include media('<widescreen') {
         padding: 130px 0 50px 0;
@@ -1884,11 +1884,11 @@
 
     .img-box {
         position: relative;
-        width: 100%;
-        height: 800px;
-        border-radius: 50px;
+        width: 80%;
+        height: 500px;
+        border-radius: 30px;
         overflow: hidden;
-        margin-bottom: 30px;
+        margin: 0 auto 30px auto;
 
         @include media('<widescreen') {
             height: 500px;
